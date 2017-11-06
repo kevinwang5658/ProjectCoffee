@@ -6,6 +6,9 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
 
+    <string name="gold">Gold Tier</string>
+    <string name="silver">Silver Tier</string>
+
 
     <string name="lb_description">Login Screen Background</string>
 </resources>
