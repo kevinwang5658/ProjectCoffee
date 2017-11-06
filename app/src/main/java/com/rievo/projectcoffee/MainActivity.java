@@ -2,6 +2,7 @@ package com.rievo.projectcoffee;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
 import com.rievo.library.BackStack;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         LinearBackStack linearBackStack = backStackManager.createLinearBackStack("TAG", root, (layoutInflater, container) -> {
             //This is our first view group in the stack
-            ViewGroupLogin vg = (ViewGroupLogin) layoutInflater.inflate(R.layout.viewgroup_login, container, false);
+            ViewGroup vg = (ViewGroup) layoutInflater.inflate(R.layout.main_vg, container, false);
 
             //Make sure that the view is added to container by the end of this block
             container.addView(vg);
