@@ -23,6 +23,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/background_coffee" />
             <ImageButton
+                android:id="@+id/navigation_button"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:src="@drawable/ic_menu_black_24dp"

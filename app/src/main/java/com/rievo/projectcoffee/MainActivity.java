@@ -1,6 +1,7 @@
 package com.rievo.projectcoffee;
 
 import android.content.SharedPreferences;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +18,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.root) FrameLayout root;
+    @BindView(R.id.drawer) DrawerLayout drawerLayout;
 
     public static final String SP_TAG = "SP_TAG";
     public static final String SP_LOGGED_IN = "SP_LOGGED_IN";
