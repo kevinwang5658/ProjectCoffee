@@ -45,7 +45,7 @@ public class ViewGroupLogin extends RelativeLayout {
                     buttonSignUp.setVisibility(GONE);
                     buttonLogin.animate().translationY(300);
                 } else {
-                    ((MainActivity) getContext()).login();
+                    ((MainActivity) getContext()).login(ViewGroupLogin.this);
                 }
             }
         });
