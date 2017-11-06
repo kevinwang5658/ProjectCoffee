@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
         LinearBackStack linearBackStack = backStackManager.createLinearBackStack("TAG", root, (layoutInflater, container) -> {
             //This is our first view group in the stack
-            ViewGroup vg = (ViewGroup) layoutInflater.inflate(R.layout.main_vg, container, false);
+            ViewGroup vg = (ViewGroup) layoutInflater.inflate(R.layout.viewgroup_login, container, false);
 
             //Make sure that the view is added to container by the end of this block
             container.addView(vg);
