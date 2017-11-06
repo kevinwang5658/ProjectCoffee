@@ -40,4 +40,8 @@ public class MainActivity extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
+    protected void login() {
+
+    }
 }

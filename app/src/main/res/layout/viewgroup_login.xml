@@ -9,8 +9,57 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:contentDescription="@string/lb_description"
+        android:scaleType="centerCrop"
         android:src="@drawable/login_background"
-        app:srcCompat="@drawable/login_background"
-        android:scaleType="centerCrop"/>
+        app:srcCompat="@drawable/login_background" />
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:hint="@string/username"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/editTextUsername"
+        android:layout_below="@+id/editTextUsername"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/rounded"
+        android:text="@string/login"
+        android:textColor="@color/white"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/buttonSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonLogin"
+        android:layout_alignStart="@+id/buttonLogin"
+        android:layout_below="@+id/buttonLogin"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded"
+        android:text="@string/sign_up"
+        android:textColor="@color/white"
+        android:visibility="visible" />
+
 
 </com.rievo.projectcoffee.ViewGroupLogin>

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">ProjectCoffee</string>
+
+    <string name="login">Login</string>
+    <string name="sign_up">Sign up</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+
+
+    <string name="lb_description">Login Screen Background</string>
 </resources>
