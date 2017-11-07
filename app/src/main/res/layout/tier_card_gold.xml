@@ -6,6 +6,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
-        android:background="@drawable/gold_card"/>
+        android:background="@drawable/gold_card">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:textSize="16sp"
+            android:text="Gold"/>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
