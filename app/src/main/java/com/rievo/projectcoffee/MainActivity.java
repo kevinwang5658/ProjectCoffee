@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             LayoutInflater.from(this).inflate(R.layout.viewgroup_login, root, true);
         } else {
             drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-            backStackManager.createLinearBackStack("TAG", root, (layoutInflater, container) -> {
+            backStackManager.createLinearBackStack(SP_TAG, root, (layoutInflater, container) -> {
                 //This is our first view group in the stack
                 ViewGroup vg = (ViewGroup) layoutInflater.inflate(R.layout.main_vg, container, false);
 
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sp = getSharedPreferences(SP_TAG, MODE_PRIVATE);
         sp.edit().putBoolean(SP_LOGGED_IN, true).apply();
         drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
-        BackStack.getBackStackManager().createLinearBackStack("TAG", root, (layoutInflater, container) -> {
+        BackStack.getBackStackManager().createLinearBackStack(SP_TAG, root, (layoutInflater, container) -> {
             //This is our first view group in the stack
             ViewGroup vg = (ViewGroup) layoutInflater.inflate(R.layout.main_vg, container, false);
 
@@ -106,5 +107,37 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .show();
+    }
+
+    protected void history() {
+        if (BackStack.getStack(SP_TAG) != null) {
+
+            Log.d(SP_TAG, "history: has backstack");
+            ((LinearBackStack) BackStack.getStack(SP_TAG)).add((layoutInflater, container) -> {
+                //This is our first view group in the stack
+                ViewGroup vg = (ViewGroup) layoutInflater.inflate(R.layout.viewgroup_history, container, false);
+
+                //Make sure that the view is added to container by the end of this block
+                container.addView(vg);
+
+                Log.d(SP_TAG, "history: has backstack");
+                //Return the view group that was newly inflated
+                return vg;
+            });
+        } else {
+
+            Log.d(SP_TAG, "history: no backstack");
+            BackStack.getBackStackManager().createLinearBackStack(SP_TAG, root, (layoutInflater, container) -> {
+                //This is our first view group in the stack
+                ViewGroup vg = (ViewGroup) layoutInflater.inflate(R.layout.viewgroup_history, container, false);
+
+                //Make sure that the view is added to container by the end of this block
+                container.addView(vg);
+
+                Log.d(SP_TAG, "history: no backstack");
+                //Return the view group that was newly inflated
+                return vg;
+            });
+        }
     }
 }

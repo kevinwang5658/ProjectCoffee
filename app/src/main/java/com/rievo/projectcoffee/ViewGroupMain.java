@@ -5,6 +5,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.Gravity;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -51,10 +52,15 @@ public class ViewGroupMain extends RelativeLayout {
         ((MainActivity) getContext()).drawerLayout.openDrawer(Gravity.START);
     }
 
-    @OnClick(R.id.pointsButton) public void onPointsClick() {
+    @OnClick(R.id.pointsButton) public void onInvisibleButtonClick() {
         points.setText("500");
         //tierLayout.setBackgroundColor(getResources().getColor(R.color.gold));
         ((MainActivity) getContext()).upgrade();
         //tierTitle.setText(getResources().getString(R.string.gold));
+    }
+
+    @OnClick(R.id.view) public void onPointViewClick() {
+        Log.d("79", "onPointViewClick: ");
+        ((MainActivity) getContext()).history();
     }
 }
