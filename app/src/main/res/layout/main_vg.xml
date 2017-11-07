@@ -76,10 +76,8 @@
                 android:text="Redeem" />
 
         </RelativeLayout>
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="#AA8821"/>
+
+        <include layout="@layout/viewgroup_details" />
 
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 
