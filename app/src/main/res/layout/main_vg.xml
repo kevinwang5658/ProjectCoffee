@@ -7,7 +7,7 @@
     <com.sothree.slidinguppanel.SlidingUpPanelLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:umanoPanelHeight="60dp"
+        app:umanoPanelHeight="52dp"
         app:umanoOverlay="true"
         android:gravity="bottom">
         <RelativeLayout
