@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
 import com.rievo.library.BackStack;
 import com.rievo.library.BackStackManager;
@@ -14,6 +15,7 @@ import com.rievo.library.LinearBackStack;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,8 +37,10 @@ public class MainActivity extends AppCompatActivity {
 
         SharedPreferences sp = getSharedPreferences(SP_TAG, MODE_PRIVATE);
         if (!sp.getBoolean(SP_LOGGED_IN, false)){
+            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
             LayoutInflater.from(this).inflate(R.layout.viewgroup_login, root, true);
         } else {
+            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
             backStackManager.createLinearBackStack("TAG", root, (layoutInflater, container) -> {
                 //This is our first view group in the stack
                 ViewGroup vg = (ViewGroup) layoutInflater.inflate(R.layout.main_vg, container, false);
@@ -48,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
                 return vg;
             });
         }
-
     }
 
     @Override
@@ -58,7 +61,18 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @OnClick(R.id.signOut)
+    public void signOut() {
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
+        SharedPreferences sp = getSharedPreferences(SP_TAG, MODE_PRIVATE);
+        sp.edit().putBoolean(SP_LOGGED_IN, false).apply();
+        LayoutInflater.from(this).inflate(R.layout.viewgroup_login, root, true);
+    }
+
     protected void login(ViewGroupLogin viewGroupLogin) {
+        SharedPreferences sp = getSharedPreferences(SP_TAG, MODE_PRIVATE);
+        sp.edit().putBoolean(SP_LOGGED_IN, true).apply();
+        drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNLOCKED);
         BackStack.getBackStackManager().createLinearBackStack("TAG", root, (layoutInflater, container) -> {
             //This is our first view group in the stack
             ViewGroup vg = (ViewGroup) layoutInflater.inflate(R.layout.main_vg, container, false);

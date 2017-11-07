@@ -39,24 +39,36 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Base.TextAppearance.AppCompat.Subhead"
-        android:layout_margin="10dp"
+
+        android:padding="10dp"
+        android:background="?android:selectableItemBackground"
+        android:clickable="true"
         android:text="Account"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Base.TextAppearance.AppCompat.Subhead"
-        android:layout_margin="10dp"
+
+        android:padding="10dp"
+        android:background="?android:selectableItemBackground"
+        android:clickable="true"
         android:text="User"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+
+        android:padding="10dp"
         style="@style/Base.TextAppearance.AppCompat.Subhead"
+        android:background="?android:selectableItemBackground"
+        android:clickable="true"
         android:text="About"/>
     <TextView
+        android:id="@+id/signOut"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:padding="10dp"
         style="@style/Base.TextAppearance.AppCompat.Subhead"
+        android:background="?android:selectableItemBackground"
+        android:clickable="true"
         android:text="Sign Out"/>
 </LinearLayout>

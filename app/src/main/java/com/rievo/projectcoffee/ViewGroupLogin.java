@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
+
 public class ViewGroupLogin extends RelativeLayout {
 
     private Button buttonLogin;
@@ -20,7 +21,6 @@ public class ViewGroupLogin extends RelativeLayout {
     private EditText editTextPassword;
 
     private int loginState = 0;
-
 
     public ViewGroupLogin(Context context) {
         super(context);
@@ -76,5 +76,4 @@ public class ViewGroupLogin extends RelativeLayout {
             }
         });
     }
-
 }
