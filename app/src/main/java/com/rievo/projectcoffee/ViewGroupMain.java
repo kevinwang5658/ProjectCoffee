@@ -22,7 +22,8 @@ import butterknife.OnClick;
 public class ViewGroupMain extends RelativeLayout {
 
     @BindView(R.id.points) TextView points;
-    //@BindView(R.id.tier_layout) RelativeLayout tierLayout;
+    @BindView(R.id.drawer_top) RelativeLayout drawerTop;
+    @BindView(R.id.drawer_text) TextView drawerText;
 
     public ViewGroupMain(Context context) {
         super(context);
@@ -54,13 +55,12 @@ public class ViewGroupMain extends RelativeLayout {
 
     @OnClick(R.id.pointsButton) public void onInvisibleButtonClick() {
         points.setText("500");
-        //tierLayout.setBackgroundColor(getResources().getColor(R.color.gold));
+        drawerTop.setBackgroundColor(getResources().getColor(R.color.silver));
+        drawerText.setText(getResources().getString(R.string.silver));
         ((MainActivity) getContext()).upgrade();
-        //tierTitle.setText(getResources().getString(R.string.gold));
     }
 
     @OnClick(R.id.view) public void onPointViewClick() {
-        Log.d("79", "onPointViewClick: ");
         ((MainActivity) getContext()).history();
     }
 }

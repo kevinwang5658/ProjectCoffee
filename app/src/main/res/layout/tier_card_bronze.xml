@@ -4,10 +4,11 @@
     android:layout_height="match_parent">
     <RelativeLayout
         android:gravity="center"
+        android:layout_margin="20dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
-        android:background="@drawable/gold_card">
+        android:background="@drawable/bronze_card">
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -18,14 +19,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
                 android:padding="8dp"
-                android:text="Welcome Gift: Free Lighthouse Coffee mug"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:padding="8dp"
-                android:text="$1 = 20 points"/>
+                android:text="$1 = 10 points"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -42,14 +36,8 @@
                 android:padding="8dp"
                 android:text="Birthday coffee"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:padding="8dp"
-                android:text="1 free refills per visit"/>
-
         </LinearLayout>
+
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -1,6 +1,7 @@
 package com.rievo.projectcoffee;
 
 import android.support.v4.view.PagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +17,9 @@ public class Adapter extends PagerAdapter {
         LayoutInflater inflater = LayoutInflater.from(container.getContext());
         View view = null;
         switch (position){
-            case 0: view = inflater.inflate(R.layout.tier_card_silver, container, false);break;
-            case 1: view = inflater.inflate(R.layout.tier_card_gold, container, false); break;
+            case 0: view = inflater.inflate(R.layout.tier_card_bronze, container, false);break;
+            case 1: view = inflater.inflate(R.layout.tier_card_silver, container, false); break;
+            case 2: view = inflater.inflate(R.layout.tier_card_gold, container, false); break;
         }
 
         container.addView(view);
@@ -26,11 +28,18 @@ public class Adapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
         return view == object;
     }
+
+
+    @Override
+    public void destroyItem(ViewGroup container, int position, Object object) {
+        ((ViewPager) container).removeView((View) object);
+    }
+
 }
