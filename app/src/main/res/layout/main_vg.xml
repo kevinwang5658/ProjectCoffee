@@ -9,6 +9,7 @@
         android:layout_height="match_parent"
         app:umanoPanelHeight="52dp"
         app:umanoOverlay="true"
+        app:umanoFadeColor="#00000000"
         android:gravity="bottom">
         <RelativeLayout
             android:layout_width="match_parent"

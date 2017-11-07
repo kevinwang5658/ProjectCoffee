@@ -2,60 +2,26 @@
 <com.rievo.projectcoffee.ViewGroupTier xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="-52dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
-    <FrameLayout
-        android:id="@+id/tier_layout"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:background="@color/silver">
-        <TextView
-            android:id="@+id/tier_title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:text="@string/silver"
-            android:layout_centerInParent="true"
-            android:textAlignment="center"/>
-    </FrameLayout>
+    android:orientation="vertical"
+    android:background="#80333333">
     <RelativeLayout
-        android:layout_below="@+id/tier_layout"
+        android:background="#4F4F4F"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#333333">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="15dp">
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/tier_image"
-                android:layout_width="52dp"
-                android:layout_marginTop="10dp"
-                android:layout_height="52dp"
-                android:src="@drawable/background"
-                android:layout_marginStart="20dp"/>
-            <LinearLayout
-                android:layout_marginStart="20dp"
-                android:layout_toEndOf="@+id/tier_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="@style/Base.TextAppearance.AppCompat.Title"
-                android:text="Rosemary Valarie"
-                android:textSize="28sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    style="@style/Base.TextAppearance.AppCompat.Subhead"
-                    android:text="My Progress"/>
-            </LinearLayout>
-        </RelativeLayout>
+        android:layout_height="52dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="330dp"
+        android:background="@drawable/background_rounded"
+        android:layout_margin="20dp"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
         <com.github.lzyzsd.circleprogress.ArcProgress
+            android:id="@+id/tier_progress"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="120dp"
+            android:layout_marginTop="28dp"
             android:layout_width="180dp"
             android:layout_height="180dp"
             app:arc_stroke_width="12dp"
@@ -63,16 +29,55 @@
             app:arc_unfinished_color="#AA8821"
             app:arc_text_color="#FFFFFF"
             app:arc_bottom_text="Gold"
-            app:arc_bottom_text_size="26sp"/>
+            app:arc_bottom_text_size="14sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            android:text="10 more to next tier"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        style="@style/Base.TextAppearance.AppCompat.Subhead"
+        android:text="Next Tier"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_marginTop="-10dp"
+        android:layout_width="match_parent"
+        android:layout_height="260dp"/>
+    <!--<RelativeLayout
+        android:id="@+id/tier_layout"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:gravity="center"
+        android:background="@color/silver">
+        <TextView
+            android:id="@+id/tier_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/silver"
+            android:textAlignment="center"/>
+    </RelativeLayout>-->
+    <!--<RelativeLayout
+        android:layout_below="@+id/tier_layout"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_margin="20dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/main_round_view">
+    </RelativeLayout>
         <RelativeLayout
             android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:background="#4F4F4F">
-            <android.support.v4.view.ViewPager
+            android:layout_height="230dp">
+            <com.robohorse.pagerbullet.PagerBullet
                 android:id="@+id/view_pager"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>
-        </RelativeLayout>
-    </RelativeLayout>
+        </RelativeLayout>-->
 </com.rievo.projectcoffee.ViewGroupTier>
