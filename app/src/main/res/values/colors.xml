@@ -6,4 +6,5 @@
     <color name="colorStatusBar">#2e2e2e</color>
     <color name="white">#FFFFFF</color>
     <color name="gold">#AA8821</color>
+    <color name="silver">#828282</color>
 </resources>

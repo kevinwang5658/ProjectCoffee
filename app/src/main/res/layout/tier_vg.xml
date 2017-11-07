@@ -8,12 +8,13 @@
         android:id="@+id/tier_layout"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:background="#AA8821">
+        android:background="@color/silver">
         <TextView
+            android:id="@+id/tier_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
-            android:text="Gold"
+            android:text="@string/silver"
             android:layout_centerInParent="true"
             android:textAlignment="center"/>
     </FrameLayout>

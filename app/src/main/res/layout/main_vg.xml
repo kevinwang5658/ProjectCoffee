@@ -42,12 +42,13 @@
                 android:focusable="true"
                 android:id="@+id/view" >
                 <TextView
+                    android:id="@+id/points"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/Base.TextAppearance.AppCompat.Display3"
                     android:layout_marginTop="65dp"
                     android:textAlignment="center"
-                    android:text="4036"
+                    android:text="450"
                     android:textColor="#F2F2F2"/>
                 <TextView
                     android:layout_width="match_parent"
@@ -74,6 +75,15 @@
                 android:layout_marginBottom="122dp"
                 android:background="@drawable/main_button"
                 android:text="Redeem" />
+
+
+            <Button
+                android:id="@+id/pointsButton"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="?selectableItemBackgroundBorderless"/>
 
         </RelativeLayout>
 

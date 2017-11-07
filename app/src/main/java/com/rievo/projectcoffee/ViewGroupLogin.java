@@ -54,6 +54,7 @@ public class ViewGroupLogin extends RelativeLayout {
                     YoYo.with(Techniques.FadeIn).duration(400).playOn(editTextPassword);
                     YoYo.with(Techniques.FadeOut).duration(400).playOn(buttonSignUp);
                     buttonBack.setVisibility(VISIBLE);
+                    buttonSignUp.setEnabled(false);
                     buttonLogin.animate().translationY(300);
                     loginState = 1;
                 } else {
@@ -71,6 +72,7 @@ public class ViewGroupLogin extends RelativeLayout {
                     YoYo.with(Techniques.FadeOut).duration(400).playOn(editTextPassword);
                     YoYo.with(Techniques.FadeIn).duration(400).playOn(buttonSignUp);
                     buttonLogin.animate().translationY(0);
+                    buttonSignUp.setEnabled(true);
                     loginState = 0;
                 }
             }

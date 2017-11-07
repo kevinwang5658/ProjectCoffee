@@ -2,9 +2,15 @@ package com.rievo.projectcoffee;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.Gravity;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -13,6 +19,13 @@ import butterknife.OnClick;
  */
 
 public class ViewGroupMain extends RelativeLayout {
+
+    @BindView(R.id.points)
+    TextView points;
+    @BindView(R.id.tier_layout)
+    FrameLayout tierLayout;
+    @BindView(R.id.tier_title)
+    TextView tierTitle;
 
     public ViewGroupMain(Context context) {
         super(context);
@@ -40,5 +53,12 @@ public class ViewGroupMain extends RelativeLayout {
 
     @OnClick(R.id.navigation_button) public void onNavigationClick(){
         ((MainActivity) getContext()).drawerLayout.openDrawer(Gravity.START);
+    }
+
+    @OnClick(R.id.pointsButton) public void onPointsClick() {
+        points.setText("500");
+        tierLayout.setBackgroundColor(getResources().getColor(R.color.gold));
+        ((MainActivity) getContext()).upgrade();
+        tierTitle.setText(getResources().getString(R.string.gold));
     }
 }
