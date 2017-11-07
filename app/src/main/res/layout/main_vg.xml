@@ -77,7 +77,7 @@
 
         </RelativeLayout>
 
-        <include layout="@layout/viewgroup_details" />
+        <include layout="@layout/tier_vg" />
 
     </com.sothree.slidinguppanel.SlidingUpPanelLayout>
 
