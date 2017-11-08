@@ -3,12 +3,18 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#80333333">
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/history"
+    android:elevation="100dp">
+    <FrameLayout
+        android:id="@+id/history_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_margin="30dp"
+        android:background="@drawable/background_rounded">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/history"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+    </FrameLayout>
 </com.rievo.projectcoffee.ViewGroupHistory>

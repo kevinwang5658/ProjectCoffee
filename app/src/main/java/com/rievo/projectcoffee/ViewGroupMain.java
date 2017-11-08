@@ -75,21 +75,15 @@ public class ViewGroupMain extends RelativeLayout {
     }
 
     @OnClick(R.id.view) public void onPointViewClick() {
-        ViewGroup.LayoutParams layoutParams1 = view.getLayoutParams();
-        /*LayoutParams layoutParams = new LayoutParams(3000, 3000);
-        layoutParams.setMargins(-600, -600, -600, -600);
-        layoutParams.addRule(RelativeLayout.CENTER_IN_PARENT, RelativeLayout.TRUE);
-        view.setLayoutParams(layoutParams);
-        view.invalidate();
-        view.setElevation(100);*/
-
-
-
-        YoYo.with(Techniques.FadeOut)
-                .duration(100)
-                .onEnd(callback->{
-                    ((ViewGroup) view).removeView(view.findViewById(R.id.text_layout));
-                    view.animate().scaleXBy(20).scaleYBy(20).setDuration(400)
+        /*YoYo.with(Techniques.FadeOut)
+                .duration(50)
+                .onEnd(callback->{*/
+                    //view.setVisibility(GONE);
+                    view.animate().scaleXBy(35).scaleYBy(35).setDuration(400)
+                            .withEndAction(()->{
+                                view.setVisibility(VISIBLE);
+                                ((MainActivity) getContext()).history();
+                            })
                             .setListener(new Animator.AnimatorListener() {
                                 @Override
                                 public void onAnimationStart(Animator animation) {
@@ -98,7 +92,7 @@ public class ViewGroupMain extends RelativeLayout {
 
                                 @Override
                                 public void onAnimationEnd(Animator animation) {
-                                    ((MainActivity) getContext()).history();
+
                                 }
 
                                 @Override
@@ -112,7 +106,8 @@ public class ViewGroupMain extends RelativeLayout {
                                 }
                             })
                             .start();
-                })
-                .playOn(findViewById(R.id.text_layout));
+                //})
+                findViewById(R.id.text_layout).setVisibility(GONE);
+
     }
 }

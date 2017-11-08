@@ -6,9 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.daimajia.androidanimations.library.Techniques;
+import com.daimajia.androidanimations.library.YoYo;
 import com.poliveira.parallaxrecyclerview.ParallaxRecyclerAdapter;
 
 import java.util.ArrayList;
@@ -20,6 +23,7 @@ import butterknife.ButterKnife;
 public class ViewGroupHistory extends RelativeLayout {
 
     @BindView(R.id.history) RecyclerView history;
+    @BindView(R.id.history_layout) FrameLayout historyLayout;
 
     public ViewGroupHistory(Context context) {
         super(context);
@@ -38,6 +42,9 @@ public class ViewGroupHistory extends RelativeLayout {
         super.onAttachedToWindow();
 
         ButterKnife.bind(this);
+        YoYo.with(Techniques.FadeIn)
+                .duration(100)
+                .playOn(historyLayout);
 
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         manager.setOrientation(LinearLayoutManager.VERTICAL);
