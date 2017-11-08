@@ -60,6 +60,7 @@ public class RedeemAdapter extends RecyclerView.Adapter<RedeemAdapter.ViewHolder
             textView = itemView.findViewById(R.id.redeem_text);
             itemView.setOnClickListener(v->{
                 adapter.onClick(position);
+                itemView.setBackgroundColor(0x4f4f4f);
             });
         }
     }
