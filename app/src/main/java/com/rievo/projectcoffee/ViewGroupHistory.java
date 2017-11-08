@@ -14,8 +14,11 @@ import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.poliveira.parallaxrecyclerview.ParallaxRecyclerAdapter;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.Random;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,20 +54,27 @@ public class ViewGroupHistory extends RelativeLayout {
         history.setLayoutManager(manager);
         history.setHasFixedSize(true);
 
+        Calendar c = Calendar.getInstance();
 
-        final List<String> content = new ArrayList<>();
-        for (int i = 0; i < 30; i++)
-            content.add("dsaf");
+        SimpleDateFormat df = new SimpleDateFormat("MMM dd, yyyy");
+
+
+        List<String> content = new ArrayList<>();
+        for (int i = 0; i < 30; i++) {
+            c.add(Calendar.DAY_OF_YEAR, -1);
+            String formattedDate = df.format(c.getTime());
+            content.add(formattedDate);
+        }
 
         ParallaxRecyclerAdapter<String> stringAdapter = new ParallaxRecyclerAdapter<String>(content) {
             @Override
             public void onBindViewHolderImpl(RecyclerView.ViewHolder viewHolder, ParallaxRecyclerAdapter<String> parallaxRecyclerAdapter, int i) {
-                ((TextView) viewHolder.itemView).setText(content.get(i));
+                ((SimpleViewHolder) viewHolder).setDate(viewHolder.itemView, content.get(i));
             }
 
             @Override
             public RecyclerView.ViewHolder onCreateViewHolderImpl(ViewGroup viewGroup, ParallaxRecyclerAdapter<String> parallaxRecyclerAdapter, int i) {
-                return new SimpleViewHolder(((MainActivity)getContext()).getLayoutInflater().inflate(android.R.layout.simple_list_item_1, viewGroup, false));
+                return new SimpleViewHolder(((MainActivity)getContext()).getLayoutInflater().inflate(R.layout.cell, viewGroup, false));
             }
 
             @Override
@@ -87,12 +97,26 @@ public class ViewGroupHistory extends RelativeLayout {
 
         public SimpleViewHolder(View itemView) {
             super(itemView);
+
+            TextView date = (TextView) itemView.findViewById(R.id.date);
+            TextView amount = (TextView) itemView.findViewById(R.id.amount);
+            TextView points = (TextView) itemView.findViewById(R.id.points_earned);
+
+            date.setText("Nov 1, 2017");
+            Random random = new Random();
+            int amountNum = random.nextInt(15) + 1;
+            int pointsNum = amountNum + 10;
+
+            amount.setText("$" + Integer.toString(amountNum) + ".00");
+            points.setText(Integer.toString(pointsNum) + " points earned");
+
         }
 
+        public void setDate(View itemView, String dateString){
+            TextView date = (TextView) itemView.findViewById(R.id.date);
 
-    public String getListString(int position) {
-        return position + " - android";
-    }
+            date.setText(dateString);
 
+        }
     }
 }
