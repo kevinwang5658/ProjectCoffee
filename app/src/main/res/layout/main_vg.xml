@@ -76,6 +76,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/redeem_button"
                 android:layout_width="320dp"
                 android:layout_height="60dp"
                 android:layout_alignParentBottom="true"

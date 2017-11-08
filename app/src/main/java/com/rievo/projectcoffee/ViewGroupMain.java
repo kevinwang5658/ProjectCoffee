@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -40,6 +41,7 @@ public class ViewGroupMain extends RelativeLayout {
     @BindView(R.id.view) View view;
     @BindView(R.id.viewgroup_tier) ViewGroupTier viewGroupTier;
     @BindView(R.id.multiplier) TextView multiplier;
+    @BindView(R.id.redeem_button) Button redeemButton;
 
     public ViewGroupMain(Context context) {
         super(context);
@@ -124,5 +126,13 @@ public class ViewGroupMain extends RelativeLayout {
                 //})
                 findViewById(R.id.text_layout).setVisibility(GONE);
 
+    }
+
+    @OnClick(R.id.redeem_button) public void onClick(){
+        ((LinearBackStack) BackStack.getStack(SP_TAG)).add((layoutInflater, container) -> {
+            ViewGroup view = (ViewGroup) layoutInflater.inflate(R.layout.redeem_vg, container, false);
+            container.addView(view);
+            return view;
+        });
     }
 }

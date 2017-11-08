@@ -107,9 +107,7 @@ public class MainActivity extends AppCompatActivity {
         }).removeAnimator((v, a)->{
             v.getRootView().findViewById(R.id.view).animate().scaleX(1).scaleY(1).withEndAction(()->
                     findViewById(R.id.text_layout).setVisibility(View.VISIBLE)).start();
-            /*YoYo.with(Techniques.FadeIn)
-                    .duration(300)
-                    .delay(100000)*/
+            Log.d(SP_TAG, "sdf");
             a.done();
         }).build();
     }
