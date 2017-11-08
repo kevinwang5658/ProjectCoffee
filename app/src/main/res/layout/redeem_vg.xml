@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.rievo.projectcoffee.ViewGroupRedeem
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:background="#80333333">
+
     <RelativeLayout
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:background="@drawable/background_rounded">
+
+        <ImageView
+            android:id="@+id/qr_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:srcCompat="@drawable/qr_coffee" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,7 +31,8 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/background_rounded">
-        <android.support.v7.widget.RecyclerView
+        <ListView
+            android:id="@+id/redeem_listview"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </RelativeLayout>
