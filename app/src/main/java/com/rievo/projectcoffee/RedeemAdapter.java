@@ -23,15 +23,26 @@ public class RedeemAdapter extends RecyclerView.Adapter<RedeemAdapter.ViewHolder
         list.add("Menu Item");
     }
 
+    private OnClick onClick;
+
+    RedeemAdapter(OnClick listener){
+        this.onClick = listener;
+    }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.redeem_item, parent, false);
-        return new ViewHolder(itemView);
+        return new ViewHolder(itemView, this);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.textView.setText(list.get(position));
+        holder.position = position;
+    }
+
+    private void onClick(int position){
+        onClick.onClick(position);
     }
 
     @Override
@@ -42,10 +53,18 @@ public class RedeemAdapter extends RecyclerView.Adapter<RedeemAdapter.ViewHolder
     public static final class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView textView;
+        int position;
 
-        public ViewHolder(View itemView) {
+        public ViewHolder(View itemView, RedeemAdapter adapter) {
             super(itemView);
             textView = itemView.findViewById(R.id.redeem_text);
+            itemView.setOnClickListener(v->{
+                adapter.onClick(position);
+            });
         }
+    }
+
+    interface OnClick{
+        void onClick(int position);
     }
 }
