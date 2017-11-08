@@ -38,6 +38,8 @@ public class ViewGroupMain extends RelativeLayout {
     @BindView(R.id.drawer_top) RelativeLayout drawerTop;
     @BindView(R.id.drawer_text) TextView drawerText;
     @BindView(R.id.view) View view;
+    @BindView(R.id.viewgroup_tier) ViewGroupTier viewGroupTier;
+    @BindView(R.id.multiplier) TextView multiplier;
 
     public ViewGroupMain(Context context) {
         super(context);
@@ -68,10 +70,23 @@ public class ViewGroupMain extends RelativeLayout {
     }
 
     @OnClick(R.id.pointsButton) public void onInvisibleButtonClick() {
-        points.setText("500");
-        drawerTop.setBackgroundColor(getResources().getColor(R.color.silver));
-        drawerText.setText(getResources().getString(R.string.silver));
-        ((MainActivity) getContext()).upgrade();
+        if (points.getText() == getResources().getString(R.string.starting_points)) {
+            points.setText(getResources().getString(R.string.silver_points));
+            drawerTop.setBackgroundColor(getResources().getColor(R.color.silver));
+            drawerText.setText(getResources().getString(R.string.silver));
+            ((MainActivity) getContext()).upgrade(R.layout.dialog_upgrade_silver);
+            viewGroupTier.setViewPagerPage(1);
+            viewGroupTier.setArcSilver();
+            multiplier.setText(getResources().getString(R.string.silver_multiplier));
+        } else {
+            points.setText(getResources().getString(R.string.gold_points));
+            drawerTop.setBackgroundColor(getResources().getColor(R.color.gold));
+            drawerText.setText(getResources().getString(R.string.gold));
+            ((MainActivity) getContext()).upgrade(R.layout.dialog_upgrade_gold);
+            viewGroupTier.setViewPagerPage(2);
+            viewGroupTier.setArcGold();
+            multiplier.setText(getResources().getString(R.string.gold_multiplier));
+        }
     }
 
     @OnClick(R.id.view) public void onPointViewClick() {

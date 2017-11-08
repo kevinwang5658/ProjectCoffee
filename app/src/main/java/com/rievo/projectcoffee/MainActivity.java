@@ -91,14 +91,14 @@ public class MainActivity extends AppCompatActivity {
         root.removeView(viewGroupLogin);
     }
 
-    protected void upgrade(){
+    protected void upgrade(int layoutRes){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         // Get the layout inflater
         LayoutInflater inflater = this.getLayoutInflater();
 
         // Inflate and set the layout for the dialog
         // Pass null as the parent view because its going in the dialog layout
-        builder.setView(inflater.inflate(R.layout.dialog_upgrade, null))
+        builder.setView(inflater.inflate(layoutRes, null))
                 // Add action buttons
                 .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
                     @Override
