@@ -42,4 +42,6 @@ public class Adapter extends PagerAdapter {
         ((ViewPager) container).removeView((View) object);
     }
 
+    
+
 }

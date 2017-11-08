@@ -11,6 +11,21 @@
     <string name="bronze">Bronze Tier</string>
     <string name="ok">OK</string>
 
+    <string name="starting_points">450</string>
+    <string name="silver_points">500</string>
+    <string name="gold_points">1000</string>
+
+    <string name="bronze_arc_text">50 more points to reach silver tier!</string>
+    <string name="silver_arc_text">500 more points to reach gold tier!</string>
+    <string name="gold_arc_text">You\'ve reached gold tier!</string>
+
+    <string name="congrats">Congratulations!</string>
+    <string name="silver_upgrade">You\'ve earned enough points to reach SILVER tier!</string>
+    <string name="gold_upgrade">You\'ve earned enough points to reach GOLD tier!</string>
+
+    <string name="bronze_multiplier">1x</string>
+    <string name="silver_multiplier">1.5x</string>
+    <string name="gold_multiplier">2x</string>
 
     <string name="lb_description">Login Screen Background</string>
 </resources>

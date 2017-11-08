@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.rievo.projectcoffee.ViewGroupTier xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/viewgroup_tier"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="-52dp"
@@ -28,10 +29,11 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
         <TextView
+            android:id="@+id/arc_title"
             android:layout_margin="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gold Tier"
+            android:text="@string/bronze"
             style="@style/Base.TextAppearance.AppCompat.Title"/>
         <com.github.lzyzsd.circleprogress.ArcProgress
             android:id="@+id/tier_progress"
@@ -40,17 +42,18 @@
             android:layout_width="180dp"
             android:layout_height="180dp"
             app:arc_stroke_width="12dp"
-            app:arc_finished_color="#4F4F4F"
-            app:arc_unfinished_color="#AA8821"
-            app:arc_text_color="#FFFFFF"
-            app:arc_bottom_text="Gold"
+            app:arc_finished_color="@color/silver"
+            app:arc_unfinished_color="@color/bronze"
+            app:arc_text_color="@color/white"
+            app:arc_bottom_text="@string/silver_points"
             app:arc_bottom_text_size="14sp"/>
         <TextView
+            android:id="@+id/arc_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             style="@style/Base.TextAppearance.AppCompat.Subhead"
-            android:text="10 more to next tier"/>
+            android:text="@string/bronze_arc_text"/>
     </LinearLayout>
     <TextView
         android:id="@+id/pager_title"
