@@ -1,6 +1,8 @@
 package com.rievo.projectcoffee;
 
 import android.content.Context;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.widget.RelativeLayout;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by kwang on 2017-11-08.
@@ -22,7 +25,7 @@ import butterknife.BindView;
 public class ViewGroupRedeem extends LinearLayout {
 
     @BindView(R.id.redeem_listview)
-    ListView listView;
+    RecyclerView listView;
     @BindView(R.id.qr_image)
     ImageView qrImage;
 
@@ -41,6 +44,10 @@ public class ViewGroupRedeem extends LinearLayout {
     @Override
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
+
+        ButterKnife.bind(this);
+        listView.setAdapter(new RedeemAdapter());
+        listView.setLayoutManager(new LinearLayoutManager(getContext()));
 
 
     }
