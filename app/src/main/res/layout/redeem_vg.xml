@@ -20,8 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@drawable/qr_coffee" />
+            android:layout_centerVertical="true" />
     </RelativeLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,10 +38,10 @@
             style="@style/Base.TextAppearance.AppCompat.Subhead"
             android:layout_gravity="center_horizontal"
             android:text="Redeem"/>
-        <android.support.v7.widget.RecyclerView
+        <ListView
             android:id="@+id/redeem_listview"
+            android:choiceMode="singleChoice"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="20dp"/>
+            android:layout_height="match_parent"/>
     </LinearLayout>
 </com.rievo.projectcoffee.ViewGroupRedeem>
