@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#83333333"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:background="@drawable/rounded"
+        android:layout_width="400dp"
+        android:layout_height="400dp">
+        <TextView
+            android:text="Enjoy your order!"
+            android:paddingTop="10dp"
+            android:textSize="20sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <pl.droidsonroids.gif.GifImageView
+            android:layout_centerInParent="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/coffee" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -45,6 +45,10 @@ dependencies {
 
     compile 'com.robohorse.pagerbullet:pagerbullet:1.0.9'
     compile 'com.github.kanytu:android-parallax-recyclerview:v1.7'
+
+    compile 'com.github.bumptech.glide:glide:4.0.0'
+
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.8'
 }
 
 configurations.all {

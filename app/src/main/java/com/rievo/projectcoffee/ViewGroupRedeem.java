@@ -10,16 +10,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+
+import com.bumptech.glide.Glide;
+import com.rievo.library.BackStack;
+import com.rievo.library.LinearBackStack;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
+
+import static com.rievo.projectcoffee.MainActivity.SP_TAG;
 
 /**
  * Created by kwang on 2017-11-08.
@@ -74,6 +82,14 @@ public class ViewGroupRedeem extends LinearLayout {
             }
         });
 
+    }
+
+    @OnClick(R.id.redeemed_button) public void redeemedButtonClick() {
+        ((LinearBackStack) BackStack.getStack(SP_TAG)).add((layoutInflater, container) -> {
+            ViewGroup view = (ViewGroup) layoutInflater.inflate(R.layout.redeemed_popup, container, false);
+            container.addView(view);
+            return view;
+        });
     }
 
 }
