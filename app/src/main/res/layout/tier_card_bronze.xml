@@ -17,23 +17,26 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:textSize="18sp"
-                android:padding="8dp"
+                android:padding="5dp"
                 android:text="$1 = 10 points"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:textSize="18sp"
-                android:padding="8dp"
+                android:padding="5dp"
                 android:text="Redeem any menu item for 200 points"/>
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textAlignment="center"
                 android:textSize="18sp"
-                android:padding="8dp"
+                android:padding="5dp"
                 android:text="Birthday coffee"/>
 
         </LinearLayout>

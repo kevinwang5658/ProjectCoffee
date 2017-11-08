@@ -105,7 +105,7 @@ public class ViewGroupHistory extends RelativeLayout {
             date.setText("Nov 1, 2017");
             Random random = new Random();
             int amountNum = random.nextInt(15) + 1;
-            int pointsNum = amountNum + 10;
+            int pointsNum = amountNum * 10;
 
             amount.setText("$" + Integer.toString(amountNum) + ".00");
             points.setText(Integer.toString(pointsNum) + " points earned");
