@@ -2,59 +2,12 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout
+    <ImageView
         android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="20dp"
-        android:background="@drawable/gold_card">
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                android:padding="5dp"
-                android:text="Welcome Gift: Free Lighthouse Coffee mug"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                android:padding="5dp"
-                android:text="$1 = 20 points"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                android:padding="5dp"
-                android:text="Redeem any menu item for 200 points"/>
-
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                android:padding="5dp"
-                android:text="Birthday coffee"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="center"
-                android:textSize="18sp"
-                android:padding="5dp"
-                android:text="1 free refills per visit"/>
-
-        </LinearLayout>
-    </RelativeLayout>
+        android:src="@drawable/_gold_card">
+    </ImageView>
 
 </android.support.constraint.ConstraintLayout>
