@@ -68,6 +68,7 @@ public class ViewGroupRedeem extends LinearLayout {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                qrImage.setColorFilter(null);
                 switch (i) {
                     case 0:
                         qrImage.setImageDrawable(getResources().getDrawable(R.drawable.qr_coffee));
