@@ -82,6 +82,9 @@ public class ViewGroupRedeem extends LinearLayout {
             }
         });
 
+        qrImage.setImageDrawable(getResources().getDrawable(R.drawable.lighthouse));
+        qrImage.setColorFilter(getResources().getColor(R.color.white));
+
     }
 
     @OnClick(R.id.redeemed_button) public void redeemedButtonClick() {

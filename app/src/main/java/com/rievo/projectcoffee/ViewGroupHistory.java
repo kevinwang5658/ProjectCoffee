@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
+import com.fondesa.recyclerviewdivider.RecyclerViewDivider;
 import com.poliveira.parallaxrecyclerview.ParallaxRecyclerAdapter;
 
 import java.text.SimpleDateFormat;
@@ -53,6 +54,11 @@ public class ViewGroupHistory extends RelativeLayout {
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         history.setLayoutManager(manager);
         history.setHasFixedSize(true);
+        RecyclerViewDivider.with(getContext())
+                .size(1)
+                .tint(getResources().getColor(R.color.transparent_gray))
+                .build()
+                .addTo(history);
 
         Calendar c = Calendar.getInstance();
 

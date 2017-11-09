@@ -8,4 +8,5 @@
     <color name="gold">#AA8821</color>
     <color name="silver">#828282</color>
     <color name="bronze">#CD7F32</color>
+    <color name="transparent_gray">#807c7c7c</color>
 </resources>
